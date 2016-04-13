@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
   console.log(req);
-  res.send('It works!');
+  res.send('It works on heroku!');
 });
 
 app.get(['/facebook', '/instagram'], function(req, res) {
