@@ -13,7 +13,8 @@ var app = express();
 
 const WIT_TOKEN = "U5C43P5A3E3L7KUFQ5RTVJ7ZOU33D5NE";
 
-const Wit = require('./wit').Wit;
+//const Wit = require('./wit').Wit;
+const Wit = require('node-wit').Wit;
 const uuid = require('node-uuid');
 
 app.set('port', (process.env.PORT || 5000));
