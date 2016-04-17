@@ -11,6 +11,11 @@ var express = require('express');
 var request = require('request');
 var app = express();
 
+const WIT_TOKEN = "U5C43P5A3E3L7KUFQ5RTVJ7ZOU33D5NE";
+
+const Wit = require('./wit').Wit;
+const uuid = require('node-uuid');
+
 app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'));
 
@@ -69,8 +74,7 @@ app.post('/webhook', function (req, res) {
     //  sendTextMessage(sender, "Text received, echo: "+ text.substring(0, 200));
       const sessionId = findOrCreateSession(sender);
       wit.runActions(sessionId, text, sessions[sessionId].context, (error, context) => {
-      if (error) 
-        console.log(error);
+      if (error) console.log(error);
   });
     }
     if (event.postback) {
@@ -157,10 +161,7 @@ function sendGenericMessage(sender) {
 
 app.listen();
 
-const WIT_TOKEN = "U5C43P5A3E3L7KUFQ5RTVJ7ZOU33D5NE";
 
-const Wit = require('./wit').Wit;
-const uuid = require('node-uuid');
 
 const HERE = {
   id:"xqatBOxmf61Jv8AzLoS9",
