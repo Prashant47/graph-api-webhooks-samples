@@ -59,9 +59,9 @@ const HERE = {
   code: "EopBF0eLNTAcVNzo297DDA",
 }
 
-const currentLocation = { // Magarpatta Pune
-  Latitude: 18.512865,
-  Longitude: 73.928138
+const currentLocation = { // Fort Mason
+  Latitude: 37.80524,
+  Longitude: -122.42818
 }
 
 const sessions = {};
@@ -138,7 +138,7 @@ const getGeoLoc = (location, callback) => {
 		    qs: {app_id: HERE.id,
 		    	 app_code: HERE.code,
 		    	 gen:9,
-		    	 city: 'Pune',
+		    	 city: 'San Francisco',
 		    	 searchText: location.replace(/ /g, '+')},
 		    	 method: 'GET',
 		    	 json: true,
